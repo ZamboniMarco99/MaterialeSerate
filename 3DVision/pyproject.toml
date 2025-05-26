@@ -3,7 +3,7 @@ name = "3dvision"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = [
     "marimo>=0.13.2",
     "matplotlib>=3.10.1",
@@ -14,4 +14,18 @@ dependencies = [
     "torchaudio>=2.7.0",
     "torchvision>=0.22.0",
     "trimesh>=4.6.8",
+    "manopth",
+    "chumpy",
+    "opencv-python>=4.11.0.86",
+    "tqdm>=4.67.1",
+    "lightning>=2.5.1.post0",
+    "mlflow>=2.22.0",
+    "torch-geometric>=2.6.1",
 ]
+
+[tool.uv.sources]
+manopth = { git = "https://github.com/hassony2/manopth" }
+chumpy = { git = "https://github.com/mattloper/chumpy", rev = "9b045ff5d6588a24a0bab52c83f032e2ba433e17" }
+
+[tool.uv]
+no-build-isolation-package = ["chumpy"]
